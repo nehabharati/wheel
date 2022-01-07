@@ -12,7 +12,7 @@ export default function NotesList({
     <div className="flex flex-col w-full p-2 mb-2 space-y-2 text-gray-800 ">
       {notes.map((note, idx) => (
         <div
-          className="w-full px-2 py-2 border divide-y shadow-md shadow-gray-500/50"
+          className="w-full px-2 py-2 border divide-y shadow-sm shadow-gray-500/50"
           key={idx}
         >
           <div className="flex flex-col px-2 py-2 space-y-2 ">
