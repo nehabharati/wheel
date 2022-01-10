@@ -4,11 +4,17 @@ import { Search } from "@bigbinary/neeto-icons";
 import { Button, Input } from "neetoui/v2";
 import { Container, Header } from "neetoui/v2/layouts";
 
-import { NOTES as notes } from "./constants";
+import {
+  NOTES as notes,
+  LABELS as labels,
+  SEGMENTS as segments,
+  TAGS as tags,
+} from "./constants";
 import DeleteAlert from "./DeleteAlert";
-import NoteSidebar from "./NoteSidebar";
 import NotesList from "./NotesList";
 import NewNotePane from "./Pane/CreateNote";
+
+import Sidebar from "../Common/Sidebar";
 
 const Notes = () => {
   // const [loading, setLoading] = useState(true);
@@ -19,7 +25,7 @@ const Notes = () => {
 
   return (
     <div className="flex">
-      <NoteSidebar />
+      <Sidebar title="Notes" labels={labels} segments={segments} tags={tags} />
       <Container>
         <Header
           actionBlock={
