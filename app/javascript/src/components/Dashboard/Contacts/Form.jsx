@@ -8,6 +8,7 @@ import formValidationSchemas from "constants/formValidationSchemas";
 
 export default function ContactForm({ onClose, contact, isEdit }) {
   const [submitted, setSubmitted] = useState(false);
+
   const handleSubmit = async () => {
     try {
       setSubmitted(true);
@@ -64,40 +65,6 @@ export default function ContactForm({ onClose, contact, isEdit }) {
             </Select>
           </Pane.Body>
 
-          {/* <Pane.Body className="space-y-6">
-            <Input
-              label="Title"
-              name="title"
-              className="flex-grow-0 w-full"
-              placeholder="How to claim warranty"
-              required
-            />
-            <Input
-              label="Description"
-              name="description"
-              className="flex-grow-0 w-full"
-              placeholder="Enter Note description"
-              required
-            />
-            <Select
-              name="Assigned Contact"
-              label="Assigned Contact"
-              className="flex-grow-0 w-full"
-              placeholder="Select Role"
-              required
-            >
-              <option value=""></option>
-            </Select>
-            <Select
-              name="Tags"
-              label="Tags"
-              className="flex-grow-0 w-full"
-              placeholder="Select Role"
-              required
-            >
-              <option value=""></option>
-            </Select>
-          </Pane.Body> */}
           <Pane.Footer>
             <Button
               type="submit"
