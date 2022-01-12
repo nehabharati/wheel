@@ -13,7 +13,7 @@ export default function NewContactPane({ fetchNotes, showPane, setShowPane }) {
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          Create a New Contact
+          Add New Contact
         </Typography>
       </Pane.Header>
       <Form
