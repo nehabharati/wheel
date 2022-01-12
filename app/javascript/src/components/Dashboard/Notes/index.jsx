@@ -1,27 +1,34 @@
 import React, { useState } from "react";
 
-import { Search } from "@bigbinary/neeto-icons";
-import { Button, Input } from "neetoui/v2";
-import { Container, Header } from "neetoui/v2/layouts";
+// import { Search } from "@bigbinary/neeto-icons";
+// import { Button, Input } from "neetoui/v2";
+import { Container } from "neetoui/v2/layouts";
 
-import { NOTES as notes } from "./constants";
+import {
+  NOTES as notes,
+  LABELS as labels,
+  SEGMENTS as segments,
+  TAGS as tags,
+} from "./constants";
 import DeleteAlert from "./DeleteAlert";
-import NoteSidebar from "./NoteSidebar";
 import NotesList from "./NotesList";
-import NewNotePane from "./Pane/CreateNote";
+// import NewNotePane from "./Pane/CreateNote";
+
+import Header from "../Common/CommonHeader";
+import Sidebar from "../Common/CommonSidebar";
 
 const Notes = () => {
   // const [loading, setLoading] = useState(true);
-  const [showNewNotePane, setShowNewNotePane] = useState(false);
+  // const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
 
   const handleDeleteAlert = () => setIsDeleteAlertOpen(true);
 
   return (
     <div className="flex">
-      <NoteSidebar />
+      <Sidebar title="Notes" labels={labels} segments={segments} tags={tags} />
       <Container>
-        <Header
+        {/* <Header
           actionBlock={
             <div className="flex space-x-2">
               <Input
@@ -38,7 +45,9 @@ const Notes = () => {
           }
           menuBarToggle={function noRefCheck() {}}
           title="All Notes"
-        />
+        /> */}
+
+        <Header title="All Notes" buttonText="Add Note" isNote={true} />
 
         <NotesList
           notes={notes}
@@ -46,10 +55,10 @@ const Notes = () => {
           handleDeleteAlert={handleDeleteAlert}
         />
 
-        <NewNotePane
+        {/* <NewNotePane
           showPane={showNewNotePane}
           setShowPane={setShowNewNotePane}
-        />
+        /> */}
 
         {isDeleteAlertOpen && (
           <DeleteAlert onClose={() => setIsDeleteAlertOpen(false)} />

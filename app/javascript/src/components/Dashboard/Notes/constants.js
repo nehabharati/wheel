@@ -40,3 +40,48 @@ export const NOTES = [
     assigned: "Oliver Smith",
   },
 ];
+
+export const LABELS = [
+  {
+    name: "Users",
+    count: 80,
+  },
+  {
+    name: "Leads",
+    count: 60,
+  },
+  {
+    name: "Visitors",
+    count: 60,
+  },
+];
+
+export const SEGMENTS = [
+  {
+    name: "Europe",
+    count: 80,
+  },
+  {
+    name: "Middle-East",
+    count: 60,
+  },
+  {
+    name: "Asia",
+    count: 60,
+  },
+];
+
+export const TAGS = [
+  {
+    name: "Sales",
+    count: 80,
+  },
+  {
+    name: "Finance",
+    count: 60,
+  },
+  {
+    name: "User Experience",
+    count: 60,
+  },
+];
