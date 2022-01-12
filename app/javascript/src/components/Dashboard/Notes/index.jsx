@@ -28,25 +28,6 @@ const Notes = () => {
     <div className="flex">
       <Sidebar title="Notes" labels={labels} segments={segments} tags={tags} />
       <Container>
-        {/* <Header
-          actionBlock={
-            <div className="flex space-x-2">
-              <Input
-                prefix={<Search />}
-                className="w-64"
-                placeholder="Search Name, Email, Phone Number,etc"
-              />
-              <Button
-                onClick={() => setShowNewNotePane(true)}
-                label="Add Note"
-                icon="ri-add-line"
-              />
-            </div>
-          }
-          menuBarToggle={function noRefCheck() {}}
-          title="All Notes"
-        /> */}
-
         <Header title="All Notes" buttonText="Add Note" isNote={true} />
 
         <NotesList
@@ -54,11 +35,6 @@ const Notes = () => {
           setIsDeleteAlertOpen={setIsDeleteAlertOpen}
           handleDeleteAlert={handleDeleteAlert}
         />
-
-        {/* <NewNotePane
-          showPane={showNewNotePane}
-          setShowPane={setShowNewNotePane}
-        /> */}
 
         {isDeleteAlertOpen && (
           <DeleteAlert onClose={() => setIsDeleteAlertOpen(false)} />
