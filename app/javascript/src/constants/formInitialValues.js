@@ -17,4 +17,9 @@ export default {
     title: "",
     description: "",
   },
+  contactForm: {
+    firstName: "",
+    lastName: "",
+    email: "",
+  },
 };

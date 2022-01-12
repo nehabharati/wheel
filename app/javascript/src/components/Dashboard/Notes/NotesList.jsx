@@ -1,9 +1,7 @@
 import React from "react";
 
 import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
-import { Typography, Tag, Avatar, Dropdown } from "neetoui/v2";
-
-// import DeleteAlert from "./DeleteAlert";
+import { Typography, Tag, Avatar, Dropdown, Tooltip } from "neetoui/v2";
 
 export default function NotesList({ notes, setIsDeleteAlertOpen }) {
   return (
@@ -26,15 +24,23 @@ export default function NotesList({ notes, setIsDeleteAlertOpen }) {
 
           <div className="flex justify-between px-2 py-2">
             <Tag label="Getting Started" color="gray" />
-            <div className="flex items-center space-x-2">
-              <Clock size="15" color="gray" />
-              <Typography style="body3">Created {note.created} </Typography>
-              <Avatar
-                size="small"
-                user={{
-                  name: note.assigned,
-                }}
-              />
+            <div className="space-y-8">
+              <Tooltip
+                content="Wednesday, 10.30AM"
+                followCursor="horizontal"
+                position="bottom"
+              >
+                <div className="flex items-center space-x-2">
+                  <Clock size="15" color="gray" />
+                  <Typography style="body3">Created {note.created} </Typography>
+                  <Avatar
+                    size="small"
+                    user={{
+                      name: note.assigned,
+                    }}
+                  />
+                </div>
+              </Tooltip>
             </div>
           </div>
         </div>
