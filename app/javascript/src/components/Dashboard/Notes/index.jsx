@@ -11,7 +11,6 @@ import NotesList from "./NotesList";
 import NewNotePane from "./Pane/NewNotePane";
 
 const Notes = () => {
-  // const [loading, setLoading] = useState(true);
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
 
