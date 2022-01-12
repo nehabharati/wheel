@@ -8,7 +8,7 @@ import { NOTES as notes } from "./constants";
 import DeleteAlert from "./DeleteAlert";
 import NoteSidebar from "./NoteSidebar";
 import NotesList from "./NotesList";
-import NewNotePane from "./Pane/CreateNote";
+import NewNotePane from "./Pane/NewNotePane";
 
 const Notes = () => {
   // const [loading, setLoading] = useState(true);
