@@ -10,7 +10,6 @@ import {
 } from "./constants";
 import DeleteAlert from "./DeleteAlert";
 import NotesList from "./NotesList";
-
 import Header from "../Common/CommonHeader";
 import Sidebar from "../Common/CommonSidebar";
 
