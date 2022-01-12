@@ -4,6 +4,8 @@ import { Avatar, Typography } from "neetoui/v2";
 
 export const CONTACTS = [
   {
+    id: 1,
+    key: 1,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Ronald Richards" }} />
@@ -24,6 +26,8 @@ export const CONTACTS = [
     ),
   },
   {
+    id: 2,
+    key: 2,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Jacob Jones" }} />
@@ -44,6 +48,8 @@ export const CONTACTS = [
     ),
   },
   {
+    id: 3,
+    key: 3,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Ronald Richards" }} />
@@ -64,6 +70,8 @@ export const CONTACTS = [
     ),
   },
   {
+    id: 4,
+    key: 4,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Jacob Jones" }} />
@@ -84,6 +92,8 @@ export const CONTACTS = [
     ),
   },
   {
+    id: 5,
+    key: 5,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Ronald Richards" }} />
@@ -104,6 +114,8 @@ export const CONTACTS = [
     ),
   },
   {
+    id: 6,
+    key: 6,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Jacob Jones" }} />
@@ -124,6 +136,8 @@ export const CONTACTS = [
     ),
   },
   {
+    id: 7,
+    key: 7,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Ronald Richards" }} />
@@ -144,6 +158,8 @@ export const CONTACTS = [
     ),
   },
   {
+    id: 8,
+    key: 8,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Jacob Jones" }} />
@@ -164,6 +180,8 @@ export const CONTACTS = [
     ),
   },
   {
+    id: 9,
+    key: 9,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Ronald Richards" }} />
@@ -184,6 +202,8 @@ export const CONTACTS = [
     ),
   },
   {
+    id: 10,
+    key: 10,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Jacob Jones" }} />
@@ -204,6 +224,8 @@ export const CONTACTS = [
     ),
   },
   {
+    id: 11,
+    key: 11,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Ronald Richards" }} />
@@ -224,6 +246,8 @@ export const CONTACTS = [
     ),
   },
   {
+    id: 12,
+    key: 12,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Jacob Jones" }} />
@@ -244,6 +268,8 @@ export const CONTACTS = [
     ),
   },
   {
+    id: 13,
+    key: 13,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Ronald Richards" }} />
@@ -264,6 +290,8 @@ export const CONTACTS = [
     ),
   },
   {
+    id: 14,
+    key: 14,
     first_name: (
       <div className="flex items-center space-x-1">
         <Avatar user={{ name: "Jacob Jones" }} />

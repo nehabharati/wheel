@@ -28,7 +28,7 @@ export default function CommonHeader({
             />
             <Button
               onClick={() =>
-                isNote ? setShowNewNotePane(true) : setShowNewContactPane(true)
+                isNote ? setShowNewNotePane(true) : setShowNewNotePane(false)
               }
               label={buttonText}
               icon="ri-add-line"
@@ -38,7 +38,6 @@ export default function CommonHeader({
         menuBarToggle={handleSidebarOpen}
         title={title}
       />
-
       {showNewNotePane ? (
         <NewNotePane
           showPane={showNewNotePane}
