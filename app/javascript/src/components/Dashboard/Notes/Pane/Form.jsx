@@ -1,23 +1,17 @@
 import React, { useState } from "react";
 
 import { Formik, Form } from "formik";
-import { Button, Pane } from "neetoui/v2";
-import { Input, Textarea } from "neetoui/v2/formik";
+import { Button, Pane, Toastr } from "neetoui/v2";
+import { Input, Select } from "neetoui/v2/formik";
 
-import notesApi from "apis/notes";
 import formValidationSchemas from "constants/formValidationSchemas";
 
-export default function NoteForm({ onClose, refetch, note, isEdit }) {
+export default function NoteForm({ onClose, note, isEdit }) {
   const [submitted, setSubmitted] = useState(false);
-  const handleSubmit = async values => {
+  const handleSubmit = async () => {
     try {
       setSubmitted(true);
-      if (isEdit) {
-        await notesApi.update(note.id, values);
-      } else {
-        await notesApi.create(values);
-      }
-      refetch();
+      Toastr.success("Task has been added successfully");
       onClose();
     } catch (err) {
       logger.error(err);
@@ -39,15 +33,34 @@ export default function NoteForm({ onClose, refetch, note, isEdit }) {
               label="Title"
               name="title"
               className="flex-grow-0 w-full"
+              placeholder="How to claim warranty"
               required
             />
-            <Textarea
+            <Input
               label="Description"
               name="description"
               className="flex-grow-0 w-full"
-              rows={8}
+              placeholder="Enter Note description"
               required
             />
+            <Select
+              name="Assigned Contact"
+              label="Assigned Contact"
+              className="flex-grow-0 w-full"
+              placeholder="Select Role"
+              required
+            >
+              <option value=""></option>
+            </Select>
+            <Select
+              name="Tags"
+              label="Tags"
+              className="flex-grow-0 w-full"
+              placeholder="Select Role"
+              required
+            >
+              <option value=""></option>
+            </Select>
           </Pane.Body>
           <Pane.Footer>
             <Button
