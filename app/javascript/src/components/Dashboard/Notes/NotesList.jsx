@@ -1,9 +1,11 @@
 import React from "react";
 
 import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
-import { Typography, Tag, Avatar, Dropdown, Tooltip } from "neetoui/v2";
+import { Typography, Tag, Avatar, Dropdown } from "neetoui/v2";
 
-export default function NotesList({ notes }) {
+// import DeleteAlert from "./DeleteAlert";
+
+export default function NotesList({ notes, setIsDeleteAlertOpen }) {
   return (
     <div className="flex flex-col w-full p-2 mb-2 space-y-2 text-gray-800 ">
       {notes.map((note, idx) => (
@@ -16,13 +18,13 @@ export default function NotesList({ notes }) {
               <Typography style="h4"> {note.title}</Typography>
               <Dropdown icon={MenuVertical} buttonStyle="text">
                 <li>Edit</li>
-                <li>Delete</li>
+                <li onClick={() => setIsDeleteAlertOpen(true)}>Delete</li>
               </Dropdown>
             </div>
             <div className="overflow-auto">{note.description}</div>
           </div>
 
-          <div className="flex items-center justify-between px-2 py-2">
+          <div className="flex justify-between px-2 py-2">
             <Tag label="Getting Started" color="gray" />
             <div className="space-y-8">
               <Tooltip

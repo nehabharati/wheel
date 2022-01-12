@@ -1,55 +1,43 @@
 import React, { useState } from "react";
 
-import { Search } from "@bigbinary/neeto-icons";
-import { Button, Input } from "neetoui/v2";
-import { Container, Header } from "neetoui/v2/layouts";
+// import { Search } from "@bigbinary/neeto-icons";
+// import { Button, Input } from "neetoui/v2";
+import { Container } from "neetoui/v2/layouts";
 
-import { NOTES as notes } from "./constants";
+import {
+  NOTES as notes,
+  LABELS as labels,
+  SEGMENTS as segments,
+  TAGS as tags,
+} from "./constants";
 import DeleteAlert from "./DeleteAlert";
-import NoteSidebar from "./NoteSidebar";
 import NotesList from "./NotesList";
-import NewNotePane from "./Pane/CreateNote";
+// import NewNotePane from "./Pane/CreateNote";
+
+import Header from "../Common/CommonHeader";
+import Sidebar from "../Common/CommonSidebar";
 
 const Notes = () => {
-  const [showNewNotePane, setShowNewNotePane] = useState(false);
-  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
-  const [selectedNoteIds, setSelectedNoteIds] = useState([]);
-  const [isNoteSidebarOpen, setIsNoteSidebarOpen] = useState(true);
+  // const [loading, setLoading] = useState(true);
+  // const [showNewNotePane, setShowNewNotePane] = useState(false);
+  const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
+
+  const handleDeleteAlert = () => setIsDeleteAlertOpen(true);
 
   return (
     <div className="flex">
-      {isNoteSidebarOpen && <NoteSidebar />}
+      <Sidebar title="Notes" labels={labels} segments={segments} tags={tags} />
       <Container>
-        <Header
-          actionBlock={
-            <div className="flex space-x-2">
-              <Input
-                prefix={<Search />}
-                className="w-64"
-                placeholder="Search Name, Email, Phone Number,etc"
-              />
-              <Button
-                onClick={() => setShowNewNotePane(true)}
-                label="Add Note"
-                icon="ri-add-line"
-              />
-            </div>
-          }
-          menuBarToggle={() => setIsNoteSidebarOpen(!isNoteSidebarOpen)}
-          title="All Notes"
+        <Header title="All Notes" buttonText="Add Note" isNote={true} />
+
+        <NotesList
+          notes={notes}
+          setIsDeleteAlertOpen={setIsDeleteAlertOpen}
+          handleDeleteAlert={handleDeleteAlert}
         />
 
-        <NotesList notes={notes} />
-        <NewNotePane
-          showPane={showNewNotePane}
-          setShowPane={setShowNewNotePane}
-        />
-        {showDeleteAlert && (
-          <DeleteAlert
-            selectedNoteIds={selectedNoteIds}
-            onClose={() => setShowDeleteAlert(false)}
-            setSelectedNoteIds={setSelectedNoteIds}
-          />
+        {isDeleteAlertOpen && (
+          <DeleteAlert onClose={() => setIsDeleteAlertOpen(false)} />
         )}
       </Container>
     </div>

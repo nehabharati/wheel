@@ -5,7 +5,7 @@ import { Alert, Toastr } from "neetoui/v2";
 const DeleteAlert = ({ onClose }) => {
   const handleDelete = async () => {
     try {
-      Toastr.success("Note deleted successfully");
+      Toastr.success("Contact deleted successfully");
       onClose();
     } catch (error) {
       logger.error(error);
@@ -16,8 +16,8 @@ const DeleteAlert = ({ onClose }) => {
       isOpen
       onSubmit={handleDelete}
       onClose={onClose}
-      message="Are you sure you want to delete the note? This action cannot be undone."
-      title="Delete note"
+      message="Are you sure you want to delete the contact? This action cannot be undone."
+      title="Delete Contact"
     />
   );
 };
