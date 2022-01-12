@@ -3,11 +3,9 @@ import React from "react";
 import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
 import { Typography, Tag, Avatar, Dropdown } from "neetoui/v2";
 
-export default function NotesList({
-  //   setSelectedNoteIds,
-  notes,
-  //   fetchNotes,
-}) {
+// import DeleteAlert from "./DeleteAlert";
+
+export default function NotesList({ notes, setIsDeleteAlertOpen }) {
   return (
     <div className="flex flex-col w-full p-2 mb-2 space-y-2 text-gray-800 ">
       {notes.map((note, idx) => (
@@ -18,25 +16,16 @@ export default function NotesList({
           <div className="flex flex-col px-2 py-2 space-y-2 ">
             <div className="flex justify-between ">
               <Typography style="h4"> {note.title}</Typography>
-              <Dropdown
-                icon={MenuVertical}
-                buttonStyle="text"
-                //   label="Dropdown with custom icon"
-                //   position="top-end"
-              >
+              <Dropdown icon={MenuVertical} buttonStyle="text">
                 <li>Edit</li>
-                <li>Delete</li>
+                <li onClick={() => setIsDeleteAlertOpen(true)}>Delete</li>
               </Dropdown>
             </div>
             <div className="overflow-auto">{note.description}</div>
           </div>
 
           <div className="flex justify-between px-2 py-2">
-            <Tag
-              label="Getting Started"
-              color="gray"
-              //   onClose={function noRefCheck(){}}
-            />
+            <Tag label="Getting Started" color="gray" />
             <div className="flex items-center space-x-2">
               <Clock size="15" color="gray" />
               <Typography style="body3">Created {note.created} </Typography>

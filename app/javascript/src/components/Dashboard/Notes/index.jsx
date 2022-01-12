@@ -13,30 +13,9 @@ import NewNotePane from "./Pane/CreateNote";
 const Notes = () => {
   // const [loading, setLoading] = useState(true);
   const [showNewNotePane, setShowNewNotePane] = useState(false);
-  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
-  // const [searchTerm, setSearchTerm] = useState("");
-  const [selectedNoteIds, setSelectedNoteIds] = useState([]);
-  // const [notes, setNotes] = useState([]);
+  const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
 
-  // useEffect(() => {
-  //   fetchNotes();
-  // }, []);
-
-  // const fetchNotes = async () => {
-  // try {
-  //   setLoading(true);
-  //   const { data } = await notesApi.fetch();
-  //   setNotes(data.notes);
-  // } catch (error) {
-  //   logger.error(error);
-  // } finally {
-  //   setLoading(false);
-  // }
-  // };
-
-  // if (loading) {
-  //   return <PageLoader />;
-  // }
+  const handleDeleteAlert = () => setIsDeleteAlertOpen(true);
 
   return (
     <div className="flex">
@@ -57,27 +36,23 @@ const Notes = () => {
               />
             </div>
           }
-          // searchProps={{
-          //   onChange: function noRefCheck() {},
-          //   value: "",
-          // }}
           menuBarToggle={function noRefCheck() {}}
           title="All Notes"
         />
 
-        <NotesList notes={notes} />
+        <NotesList
+          notes={notes}
+          setIsDeleteAlertOpen={setIsDeleteAlertOpen}
+          handleDeleteAlert={handleDeleteAlert}
+        />
+
         <NewNotePane
           showPane={showNewNotePane}
           setShowPane={setShowNewNotePane}
-          // fetchNotes={fetchNotes}
         />
-        {showDeleteAlert && (
-          <DeleteAlert
-            selectedNoteIds={selectedNoteIds}
-            onClose={() => setShowDeleteAlert(false)}
-            // refetch={fetchNotes}
-            setSelectedNoteIds={setSelectedNoteIds}
-          />
+
+        {isDeleteAlertOpen && (
+          <DeleteAlert onClose={() => setIsDeleteAlertOpen(false)} />
         )}
       </Container>
     </div>
