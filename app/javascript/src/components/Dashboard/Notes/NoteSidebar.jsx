@@ -9,7 +9,7 @@ export default function NoteSidebar() {
     <div>
       <MenuBar showMenu={true} title="Notes">
         <MenuBar.Block label="All" count={200} active />
-        <MenuBar.Block label="Users" count={60} />
+        <MenuBar.Block label="Users" count={80} />
         <MenuBar.Block label="Leads" count={60} />
         <MenuBar.Block label="Visitors" count={60} />
 
@@ -17,7 +17,6 @@ export default function NoteSidebar() {
           iconProps={[
             {
               icon: Search,
-              // onClick: () => setIsSearchCollapsed(!isSearchCollapsed),
             },
           ]}
         >
