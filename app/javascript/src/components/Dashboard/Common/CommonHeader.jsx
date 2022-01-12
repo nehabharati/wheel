@@ -4,8 +4,8 @@ import { Search } from "@bigbinary/neeto-icons";
 import { Button, Input } from "neetoui/v2";
 import { Header } from "neetoui/v2/layouts";
 
-import NewContactPane from "../Contacts/CreateContact";
-import NewNotePane from "../Notes/Pane/CreateNote";
+import NewContactPane from "../Contacts/NewContactPane";
+import NewNotePane from "../Notes/Pane/NewNotePane";
 
 export default function CommonHeader({ title, buttonText, isNote }) {
   const [showNewNotePane, setShowNewNotePane] = useState(false);
