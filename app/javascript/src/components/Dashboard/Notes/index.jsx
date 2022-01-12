@@ -21,14 +21,28 @@ const Notes = () => {
   // const [loading, setLoading] = useState(true);
   // const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
+  const [isNoteSidebarOpen, setIsNoteSidebarOpen] = useState(true);
 
   const handleDeleteAlert = () => setIsDeleteAlertOpen(true);
+  const handleSidebarOpen = () => setIsNoteSidebarOpen(!isNoteSidebarOpen);
 
   return (
     <div className="flex">
-      <Sidebar title="Notes" labels={labels} segments={segments} tags={tags} />
+      {isNoteSidebarOpen && (
+        <Sidebar
+          title="Notes"
+          labels={labels}
+          segments={segments}
+          tags={tags}
+        />
+      )}
       <Container>
-        <Header title="All Notes" buttonText="Add Note" isNote={true} />
+        <Header
+          title="All Notes"
+          buttonText="Add Note"
+          isNote={true}
+          handleSidebarOpen={handleSidebarOpen}
+        />
 
         <NotesList
           notes={notes}

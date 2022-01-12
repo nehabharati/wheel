@@ -12,12 +12,23 @@ import { LABELS as labels } from "../Notes/constants";
 
 const Contacts = () => {
   const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
+  const [isContactSidebarOpen, setIsContactSidebarOpen] = useState(true);
+
+  const handleSidebarOpen = () =>
+    setIsContactSidebarOpen(!isContactSidebarOpen);
 
   return (
     <div className="flex w-full overflow-auto">
-      <Sidebar title="Contacts" labels={labels} segments={{}} tags={{}} />
+      {isContactSidebarOpen && (
+        <Sidebar title="Contacts" labels={labels} segments={{}} tags={{}} />
+      )}
       <Container>
-        <Header title="All Contacts" buttonText="Add Contact" isNote={false} />
+        <Header
+          title="All Contacts"
+          buttonText="Add Contact"
+          isNote={false}
+          handleSidebarOpen={handleSidebarOpen}
+        />
 
         <ContactList
           contacts={contacts}

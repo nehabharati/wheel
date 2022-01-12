@@ -42,6 +42,8 @@ export default function ContactList({ contacts, setIsDeleteAlertOpen }) {
       currentPageNumber={currentPageNumber}
       defaultPageSize={10}
       handlePageChange={page => setCurrentPageNumber(page)}
+      onRowClick={function noRefCheck() {}}
+      onRowSelect={function noRefCheck() {}}
     />
   );
 }
