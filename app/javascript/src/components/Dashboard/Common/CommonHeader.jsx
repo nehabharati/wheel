@@ -7,7 +7,12 @@ import { Header } from "neetoui/v2/layouts";
 import NewContactPane from "../Contacts/NewContactPane";
 import NewNotePane from "../Notes/Pane/NewNotePane";
 
-export default function CommonHeader({ title, buttonText, isNote }) {
+export default function CommonHeader({
+  title,
+  buttonText,
+  isNote,
+  handleSidebarOpen,
+}) {
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [showNewContactPane, setShowNewContactPane] = useState(false);
 
@@ -30,7 +35,7 @@ export default function CommonHeader({ title, buttonText, isNote }) {
             />
           </div>
         }
-        menuBarToggle={function noRefCheck() {}}
+        menuBarToggle={handleSidebarOpen}
         title={title}
       />
 

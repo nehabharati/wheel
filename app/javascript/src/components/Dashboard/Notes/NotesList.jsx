@@ -1,9 +1,7 @@
 import React from "react";
 
 import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
-import { Typography, Tag, Avatar, Dropdown } from "neetoui/v2";
-
-// import DeleteAlert from "./DeleteAlert";
+import { Typography, Tag, Avatar, Dropdown, Tooltip } from "neetoui/v2";
 
 export default function NotesList({ notes, setIsDeleteAlertOpen }) {
   return (
