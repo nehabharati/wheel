@@ -15,29 +15,48 @@ import NotesList from "./NotesList";
 // import NewNotePane from "./Pane/CreateNote";
 
 import Header from "../Common/CommonHeader";
-import Sidebar from "../Common/CommonSidebar";
+import NoteSidebar from "../Common/CommonSidebar";
 
 const Notes = () => {
-  // const [loading, setLoading] = useState(true);
-  // const [showNewNotePane, setShowNewNotePane] = useState(false);
-  const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
-
-  const handleDeleteAlert = () => setIsDeleteAlertOpen(true);
+  const [showNewNotePane, setShowNewNotePane] = useState(false);
+  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
+  const [selectedNoteIds, setSelectedNoteIds] = useState([]);
+  const [isNoteSidebarOpen, setIsNoteSidebarOpen] = useState(true);
 
   return (
     <div className="flex">
-      <Sidebar title="Notes" labels={labels} segments={segments} tags={tags} />
+      {isNoteSidebarOpen && <NoteSidebar />}
       <Container>
-        <Header title="All Notes" buttonText="Add Note" isNote={true} />
-
-        <NotesList
-          notes={notes}
-          setIsDeleteAlertOpen={setIsDeleteAlertOpen}
-          handleDeleteAlert={handleDeleteAlert}
+        <Header
+          actionBlock={
+            <div className="flex space-x-2">
+              <Input
+                prefix={<Search />}
+                className="w-64"
+                placeholder="Search Name, Email, Phone Number,etc"
+              />
+              <Button
+                onClick={() => setShowNewNotePane(true)}
+                label="Add Note"
+                icon="ri-add-line"
+              />
+            </div>
+          }
+          menuBarToggle={() => setIsNoteSidebarOpen(!isNoteSidebarOpen)}
+          title="All Notes"
         />
 
-        {isDeleteAlertOpen && (
-          <DeleteAlert onClose={() => setIsDeleteAlertOpen(false)} />
+        <NotesList notes={notes} />
+        <NewNotePane
+          showPane={showNewNotePane}
+          setShowPane={setShowNewNotePane}
+        />
+        {showDeleteAlert && (
+          <DeleteAlert
+            selectedNoteIds={selectedNoteIds}
+            onClose={() => setShowDeleteAlert(false)}
+            setSelectedNoteIds={setSelectedNoteIds}
+          />
         )}
       </Container>
     </div>
