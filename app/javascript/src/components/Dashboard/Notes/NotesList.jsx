@@ -30,7 +30,6 @@ export default function NotesList({ notes }) {
                 followCursor="horizontal"
                 position="bottom"
               >
-                {/* <Button label="Follow Cursor" style="secondary" /> */}
                 <div className="flex items-center space-x-2">
                   <Clock size="15" color="gray" />
                   <Typography style="body3">Created {note.created} </Typography>
