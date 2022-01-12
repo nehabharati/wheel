@@ -28,7 +28,7 @@ export default function CommonHeader({
             />
             <Button
               onClick={() =>
-                isNote ? setShowNewNotePane(true) : setShowNewNotePane(false)
+                isNote ? setShowNewNotePane(true) : setShowNewContactPane(true)
               }
               label={buttonText}
               icon="ri-add-line"
