@@ -21,6 +21,7 @@ export default function CommonSidebar({ title, labels, segments, tags }) {
           iconProps={[
             {
               icon: Search,
+              // onClick: () => setIsSearchCollapsed(!isSearchCollapsed),
             },
           ]}
         >
