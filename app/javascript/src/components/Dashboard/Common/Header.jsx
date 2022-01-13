@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 
-import { Search } from "@bigbinary/neeto-icons";
-import { Button, Input } from "neetoui/v2";
-import { Header as MainHeader } from "neetoui/v2/layouts";
+import ActionBlock from "./ActionBlock";
 
-import NewContactPane from "../Contacts/NewContactPane";
-import NewNotePane from "../Notes/Pane/NewNotePane";
+import ContactPane from "../Contacts/Pane/AddContact";
+import NotePane from "../Notes/Pane/AddNote";
 
 const Header = ({ title, buttonText, isNote, handleSidebarOpen }) => {
   const [showNewNotePane, setShowNewNotePane] = useState(false);
@@ -13,33 +11,18 @@ const Header = ({ title, buttonText, isNote, handleSidebarOpen }) => {
 
   return (
     <>
-      <MainHeader
-        actionBlock={
-          <div className="flex space-x-2">
-            <Input
-              prefix={<Search />}
-              className="w-64"
-              placeholder="Search Name, Email, Phone Number,etc"
-            />
-            <Button
-              onClick={() =>
-                isNote ? setShowNewNotePane(true) : setShowNewContactPane(true)
-              }
-              label={buttonText}
-              icon="ri-add-line"
-            />
-          </div>
-        }
-        menuBarToggle={handleSidebarOpen}
+      <ActionBlock
+        isNote={isNote}
         title={title}
+        buttonText={buttonText}
+        handleSidebarOpen={handleSidebarOpen}
+        setShowNewNotePane={setShowNewNotePane}
+        setShowNewContactPane={setShowNewContactPane}
       />
       {showNewNotePane ? (
-        <NewNotePane
-          showPane={showNewNotePane}
-          setShowPane={setShowNewNotePane}
-        />
+        <NotePane showPane={showNewNotePane} setShowPane={setShowNewNotePane} />
       ) : (
-        <NewContactPane
+        <ContactPane
           showPane={showNewContactPane}
           setShowPane={setShowNewContactPane}
         />

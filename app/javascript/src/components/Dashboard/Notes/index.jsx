@@ -8,10 +8,11 @@ import {
   SEGMENTS as segments,
   TAGS as tags,
 } from "./constants";
-import DeleteAlert from "./DeleteAlert";
-import NotesList from "./NotesList";
-import Header from "../Common/CommonHeader";
-import Sidebar from "../Common/CommonSidebar";
+import Delete from "./Delete";
+import List from "./List";
+
+import Header from "../Common/Header";
+import Sidebar from "../Common/Sidebar";
 
 const Notes = () => {
   const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
@@ -38,14 +39,14 @@ const Notes = () => {
           handleSidebarOpen={handleSidebarOpen}
         />
 
-        <NotesList
+        <List
           notes={notes}
           setIsDeleteAlertOpen={setIsDeleteAlertOpen}
           handleDeleteAlert={handleDeleteAlert}
         />
 
         {isDeleteAlertOpen && (
-          <DeleteAlert onClose={() => setIsDeleteAlertOpen(false)} />
+          <Delete onClose={() => setIsDeleteAlertOpen(false)} />
         )}
       </Container>
     </div>
