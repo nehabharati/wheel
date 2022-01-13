@@ -1,8 +1,9 @@
 import React from "react";
 
-import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography } from "neetoui/v2";
 import { MenuBar } from "neetoui/v2/layouts";
+
+import { SEGMENT_OPTIONS, TAG_OPTIONS } from "./constants";
 
 const Sidebar = ({ title, labels, segments = [], tags = [] }) => {
   return (
@@ -15,13 +16,7 @@ const Sidebar = ({ title, labels, segments = [], tags = [] }) => {
           count={label.count}
         />
       ))}
-      <MenuBar.SubTitle
-        iconProps={[
-          {
-            icon: Search,
-          },
-        ]}
-      >
+      <MenuBar.SubTitle iconProps={SEGMENT_OPTIONS}>
         <Typography
           component="h4"
           style="h5"
@@ -38,19 +33,7 @@ const Sidebar = ({ title, labels, segments = [], tags = [] }) => {
           count={label.count}
         />
       ))}
-      <MenuBar.SubTitle
-        iconProps={[
-          {
-            icon: Settings,
-          },
-          {
-            icon: Plus,
-          },
-          {
-            icon: Search,
-          },
-        ]}
-      >
+      <MenuBar.SubTitle iconProps={TAG_OPTIONS}>
         <Typography
           component="h4"
           style="h5"

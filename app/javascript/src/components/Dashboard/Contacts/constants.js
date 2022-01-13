@@ -2,6 +2,27 @@ import React from "react";
 
 import { Avatar, Typography } from "neetoui/v2";
 
+export const COLUMN_DATA = [
+  {
+    title: "Name and Role",
+    dataIndex: "first_name",
+    key: "first_name",
+    width: "30%",
+  },
+  {
+    title: "Email",
+    dataIndex: "email",
+    key: "email",
+    width: "30%",
+  },
+  {
+    title: "Created At",
+    dataIndex: "created_at",
+    key: "created_at",
+    width: "20%",
+  },
+];
+
 export const CONTACTS = [
   {
     id: 1,
