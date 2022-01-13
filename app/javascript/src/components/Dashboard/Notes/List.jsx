@@ -3,7 +3,7 @@ import React from "react";
 import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
 import { Typography, Tag, Avatar, Dropdown, Tooltip } from "neetoui/v2";
 
-export default function NotesList({ notes, setIsDeleteAlertOpen }) {
+const List = ({ notes, setIsDeleteAlertOpen }) => {
   return (
     <div className="flex flex-col w-full p-2 mb-2 space-y-2 text-gray-800 ">
       {notes.map((note, idx) => (
@@ -47,4 +47,6 @@ export default function NotesList({ notes, setIsDeleteAlertOpen }) {
       ))}
     </div>
   );
-}
+};
+
+export default List;

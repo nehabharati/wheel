@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-import { Formik, Form } from "formik";
+import { Formik, Form as NoteForm } from "formik";
 import { Button, Pane, Toastr } from "neetoui/v2";
 import { Input, Select } from "neetoui/v2/formik";
 
 import formValidationSchemas from "constants/formValidationSchemas";
 
-export default function NoteForm({ onClose, note, isEdit }) {
+const Form = ({ onClose, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
   const handleSubmit = async () => {
     try {
@@ -27,7 +27,7 @@ export default function NoteForm({ onClose, note, isEdit }) {
       validationSchema={formValidationSchemas.notesForm}
     >
       {({ isSubmitting, handleSubmit }) => (
-        <Form className="w-full">
+        <NoteForm className="w-full">
           <Pane.Body className="space-y-6">
             <Input
               label="Title"
@@ -84,8 +84,9 @@ export default function NoteForm({ onClose, note, isEdit }) {
               style="text"
             />
           </Pane.Footer>
-        </Form>
+        </NoteForm>
       )}
     </Formik>
   );
-}
+};
+export default Form;

@@ -4,7 +4,7 @@ import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography } from "neetoui/v2";
 import { MenuBar } from "neetoui/v2/layouts";
 
-export default function CommonSidebar({ title, labels, segments, tags }) {
+const Sidebar = ({ title, labels, segments, tags }) => {
   return (
     <div>
       <MenuBar showMenu={true} title={title}>
@@ -78,4 +78,6 @@ export default function CommonSidebar({ title, labels, segments, tags }) {
       </MenuBar>
     </div>
   );
-}
+};
+
+export default Sidebar;

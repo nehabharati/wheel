@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { MenuVertical } from "@bigbinary/neeto-icons";
 import { Table, Dropdown } from "neetoui/v2";
 
-export default function ContactList({ contacts, setIsDeleteAlertOpen }) {
+const List = ({ contacts, setIsDeleteAlertOpen }) => {
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
   const COLUMN_DATA = [
@@ -46,4 +46,6 @@ export default function ContactList({ contacts, setIsDeleteAlertOpen }) {
       onRowSelect={function noRefCheck() {}}
     />
   );
-}
+};
+
+export default List;

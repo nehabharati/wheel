@@ -6,7 +6,7 @@ import formInitialValues from "constants/formInitialValues";
 
 import Form from "./Form";
 
-export default function NewContactPane({ fetchNotes, showPane, setShowPane }) {
+const AddContact = ({ fetchNotes, showPane, setShowPane }) => {
   const onClose = () => setShowPane(false);
 
   return (
@@ -24,4 +24,5 @@ export default function NewContactPane({ fetchNotes, showPane, setShowPane }) {
       />
     </Pane>
   );
-}
+};
+export default AddContact;

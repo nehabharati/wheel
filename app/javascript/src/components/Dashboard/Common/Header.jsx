@@ -2,23 +2,18 @@ import React, { useState } from "react";
 
 import { Search } from "@bigbinary/neeto-icons";
 import { Button, Input } from "neetoui/v2";
-import { Header } from "neetoui/v2/layouts";
+import { Header as MainHeader } from "neetoui/v2/layouts";
 
 import NewContactPane from "../Contacts/NewContactPane";
 import NewNotePane from "../Notes/Pane/NewNotePane";
 
-export default function CommonHeader({
-  title,
-  buttonText,
-  isNote,
-  handleSidebarOpen,
-}) {
+const Header = ({ title, buttonText, isNote, handleSidebarOpen }) => {
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [showNewContactPane, setShowNewContactPane] = useState(false);
 
   return (
     <>
-      <Header
+      <MainHeader
         actionBlock={
           <div className="flex space-x-2">
             <Input
@@ -51,4 +46,5 @@ export default function CommonHeader({
       )}
     </>
   );
-}
+};
+export default Header;
